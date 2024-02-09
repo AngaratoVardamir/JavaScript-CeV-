@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D03JS</title>
+    <style>
+        button{
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function Desafio(){
+            var num = Number.parseInt(window.prompt('digite um número inteiro qualquer'))
+            var Antes = num - 1
+            var Depois = num + 1
+            var BoasVindas= window.alert(`antecessor do ${num} temos o número ${Antes}.
+sucessor do ${num} temos o número ${Depois}.`)
+        }
+    </script>
+</head>
+<body>
+    <h1>Boas-vindas</h1>
+    <button onclick="Desafio()">Antecessor e Sucessor</button>
+</body>
+</html>
