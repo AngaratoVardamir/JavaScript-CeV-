@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D05JS</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function Conversão(){
+            let m = Number(window.prompt(`Digite uma distância em metros (m)`))
+            var dam = m/10
+            var hm = m/100
+            var km = m/1000
+            var dm = m*10
+            var cm = m*100
+            var mm = m*1000
+            res.innerHTML = `<h1>A distância de ${m.toFixed(2).replace('.',',')} metros, corresponde a...</h1>
+<p><strong>${km.toFixed(3).replace('.',',')} quilômetros (Km)</strong></p>
+<p><strong>${hm.toFixed(3).replace('.',',')} quilômetros (Hm)</strong></p>
+<p><strong>${dam.toFixed(3).replace('.',',')} quilômetros (Dam)</strong></p>
+<p><strong>${dm.toFixed(1).replace('.',',')} quilômetros (dm)</strong></p>
+<p><strong>${cm.toFixed(0).replace('.',',')} quilômetros (cm)</strong></p>
+<p><strong>${mm.toFixed(0).replace('.',',')} quilômetros (mm)</strong></p>`
+        }
+    </script>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="Conversão()">Converter</button>
+    <p id="res">Clique no botão acima para Iniciar.</p>
+</body>
+</html>

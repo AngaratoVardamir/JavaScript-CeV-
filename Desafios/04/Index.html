@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D04JS</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function Calculado(){
+            let produtoNome = String(window.prompt(`Que produto você está comprando?`))
+            let produtoCust = Number(window.prompt(`Quanto custa mouse gamer que você está comprando?`))
+            let produtoValo = Number(window.prompt(`Qual foi o valor que você deu para pagar mouse gamer?`))
+            let produtotroc = produtoValo - produtoCust
+            window.alert(`Você comprou ${produtoNome} que custou ${produtoCust.toFixed(2).replace('.',',')}.
+Deu R$ ${produtoValo.toFixed(2).replace('.',',')} em dinheiro e vai receber R$ ${produtotroc.toFixed(2).replace('.',',')} de troco.
+Volte Sempre!`)
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <button onclick="Calculado()">Comprar produto</button>
+</body>
+</html>
