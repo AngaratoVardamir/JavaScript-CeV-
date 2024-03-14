@@ -13,24 +13,21 @@
         Clique no Botão acima para iniciar.
     </span>
     <script>
-        //18
-        //2.850,25
-        //Pedro Paulo
-        let AG = (2.850*(`105`));
-        let SCA = (18+100);
-        console.log(AG);
-        console.log(SCA);
-
-
         function Click(){
             const Nome = (window.prompt("Qual é o nome do funcionário?"));
 
-            const Salá = (window.prompt("Qual é o salário do " + Nome + "?"));
+            const Salá = (window.prompt("Qual é o salário do " + Nome + "?")).toLocaleString('pt-br', {minimumFractionDigits: 2});
 
             const Porc = (window.prompt(`O Salário de ${Nome} vai ser reajustado em qual porcentagem?`));
 
-            let AG = ();
-            let SCA = ();
+
+            const PorcFormtAG = Number('0.'+Porc);
+
+            const PorcFormtSCA = Number('1'+Porc);
+
+
+            let AG = (Salá*PorcFormtAG).toFixed(2).toLocaleString('pt-br', {minimumFractionDigits: 2});
+            let SCA = ((Salá*PorcFormtSCA)/100).toFixed(2).toLocaleString('pt-br', {minimumFractionDigits: 2});
 
             const Textos = document.querySelector("span");
             Textos.innerHTML = (`<h2>${Nome} recebeu um aumento salarial!</h2>

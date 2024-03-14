@@ -4,26 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D05JS</title>
-    <style>
-        *{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        :root{
-            --RosaCl:#FF8E80;
-            --RosaEs:#C53A9D;
-            --RoxoCl:#4A2480;
-            --RoxoEs:#051F39;
-            --BracoX:#cdcdcd;
-            --PretoX:#232323;
-        }
-        body{
-            background-color: var(--PretoX);
-            color: var(--BracoX);
-        }
-        button{
-            padding: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css.css">
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="Conversão()">Converter</button>
+    <p id="res">Clique no botão acima para Iniciar.</p>
     <script>
         function Conversão(){
             let m = Number(window.prompt(`Digite uma distância em metros (m)`))
@@ -42,10 +28,5 @@
 <p><strong>${mm.toFixed(0).replace('.',',')} quilômetros (mm)</strong></p>`
         }
     </script>
-</head>
-<body>
-    <h1>Conversor de Medidas</h1>
-    <button onclick="Conversão()">Converter</button>
-    <p id="res">Clique no botão acima para Iniciar.</p>
 </body>
 </html>

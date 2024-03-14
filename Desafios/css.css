@@ -21,6 +21,14 @@ button{
     background-color: var(--PretoX);
     color: var(--BracoX);
     cursor: pointer;
+    margin: 10px;
+}
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100vw;
 }
 span{
     margin: 20px;

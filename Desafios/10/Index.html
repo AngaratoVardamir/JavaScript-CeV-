@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10</title>
+    <link rel="stylesheet" href="../css.css">
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <button onclick="Click()">Calcular</button>
+    <span>
+        Considerando uma equação no formato ax²+bx+c=0, aperte o botão acima para calcular o Valor de Δ.
+    </span>
+    <script>
+        function Click(){
+            const A = window.prompt('Qual é o valor de a?');
+            const B = window.prompt('Qual é o valor de b?');
+            const C = window.prompt('Qual é o valor de c?');
+
+            const BhaskaraΔ = (((-B)**2)-A*4*(-C))
+            
+
+            const Texto = document.querySelector('span');
+            Texto.innerHTML = (`
+            <h2>Resolvendo Bhaskara</h2>
+            
+            <p>A equação atual é <strong>${A}x²+${B}x+${C} = 0</strong></p>
+            
+            <p>O cálculo realizado será <strong>Δ= ${B}²-4.${A}.${C}</strong></p>
+            
+            <p>O valor calculado foi <strong>Δ= ${BhaskaraΔ}</strong></p>`);
+        }
+    </script>
+</body>
+</html>
