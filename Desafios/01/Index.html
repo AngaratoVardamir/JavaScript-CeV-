@@ -3,28 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D01JS</title>
+    <title>Des 01</title>
     <style>
+        :root{
+            --RosaCl:#FF8E80;
+            --RosaEs:#C53A9D;
+            --RoxoCl:#4A2480;
+            --RoxoEs:#051F39;
+        }
+        body{
+            background-color: #212121;
+        }
+        h2{
+            color: #cdcdcd;
+        }
         button{
-            padding: 20px;
+            color: #cdcdcd;
+            background-color: #C53A9D;
+            min-width: 15%;
+            height: 40px;
+
+            border-left: 2px solid #4A2480;
+            border-top: 2px solid #4A2480;
+            border-right: 2px solid #051F39;
+            border-bottom: 2px solid #051F39;
+
+            cursor: pointer;
+
+        }
+        button:hover{
+            border-left: 2px solid #051F39;
+            border-top: 2px solid #051F39;
+            border-right: 2px solid #4A2480;;
+            border-bottom: 2px solid #4A2480;;
         }
     </style>
-    <script>
-        function Primero(){
-            window.alert('Você clicou no 1°Botão!')
-        }
-        function Segundo(){
-            window.alert('Você clicou no 2°Botão!')
-        }
-        function Terceir(){
-            window.alert('Você clicou no 3°Botão!')
-        }
-    </script>
 </head>
 <body>
-    <h1>Desafio das Mensagens</h1>
-    <button onclick="Primero()">Botão 1</button>
-    <button onclick="Segundo()">Botão 2</button>
-    <button onclick="Terceir()">Botão 3</button>
+    <h2>Desafio das Mensagens</h2>
+    <div>
+        <button class="Botaos" id="Botao1">Botão1</button>
+        <button class="Botaos" id="Botao2">Botão2</button>
+        <button class="Botaos" id="Botao3">Botão3</button>
+    </div>
+
+    <script defer>
+        const Botao1 = document.querySelector("#Botao1");
+        const Botao2 = document.querySelector("#Botao2");
+        const Botao3 = document.querySelector("#Botao3");
+
+        Botao1.addEventListener("click",()=>{
+            alert("Clicou no botâo 1")
+        })
+        Botao2.addEventListener("click",()=>{
+            alert("Clicou no botâo 2")
+        })
+        Botao3.addEventListener("click",()=>{
+            alert("Clicou no botâo 3")
+        })
+    </script>
 </body>
 </html>

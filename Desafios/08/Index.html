@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08</title>
+    <link rel="stylesheet" href="../css.css">
+    <style>
+        div{
+            display: flex;
+        }
+        div > button{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input id="Porc" type="text" placeholder="10">
+
+        <button onclick="NovaPorce()">✅</button>
+    </div>
+
+    <h1>Calcular Desconto</h1>
+    <button onclick="Click()" id="Botao2">Desconto de 10%</button>
+    <span>Clique no botão acima para iniciar</span>
+
+    <script>
+        function NovaPorce(){
+                let Pocentual = document.querySelector('input');
+                
+                let Pm = ('0.' + Pocentual.value);
+
+                let botao = document.querySelector('#Botao2');
+
+                botao.innerHTML = (`Desconto de ${(String(Pm)).slice(2)}%`)
+                
+                return(Pm)
+            }
+        function Click(){
+
+            let pocentagem = (NovaPorce());
+
+
+            const Produto = String(window.prompt(`Qual é o produto que você está comprando?`));
+
+            const Preço = parseFloat(window.prompt(`Qual é o preço de ${Produto}?`));
+
+            const DG = (Preço*pocentagem);
+            const PCD = (Preço*(1.00 - pocentagem));
+
+            const texto = document.querySelector('span');
+            texto.innerHTML = (`<h2>Calculando desconto de ${pocentagem.slice(2)}% para ${Produto}</h2>
+
+            <p>O preço original era R$ ${Preço}.</p>
+
+            <p>Você acaba de ganhar R$ ${DG} de desconto (${pocentagem.slice(2)}%).</p>
+            
+            <p>No fim, você vai pagar R$ ${PCD} no produto ${Produto}.</p>`);
+        }
+    </script>
+
+    <!-- Scipts Mask -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script>
+        $('#Porc').mask('000', {reverse: true});
+    </script>
+</body>
+</html>

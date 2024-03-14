@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09</title>
+    <link rel="stylesheet" href="../css.css">
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <button onclick="Click()">Reajustar Salário</button>
+    <span>
+        Clique no Botão acima para iniciar.
+    </span>
+    <script>
+        //18
+        //2.850,25
+        //Pedro Paulo
+        let AG = (2.850*(`105`));
+        let SCA = (18+100);
+        console.log(AG);
+        console.log(SCA);
+
+
+        function Click(){
+            const Nome = (window.prompt("Qual é o nome do funcionário?"));
+
+            const Salá = (window.prompt("Qual é o salário do " + Nome + "?"));
+
+            const Porc = (window.prompt(`O Salário de ${Nome} vai ser reajustado em qual porcentagem?`));
+
+            let AG = ();
+            let SCA = ();
+
+            const Textos = document.querySelector("span");
+            Textos.innerHTML = (`<h2>${Nome} recebeu um aumento salarial!</h2>
+            
+            <p>O salário atual era R$ ${Salá}.</p>
+            
+            <p>Com um aumento de ${Porc}%, o salário vai aumentar R$ ${AG} no próximo mês.</p>
+            
+            <p>E a partir daí, ${Nome} vai passar a ganhar R$ ${SCA}.</p>`);
+        }
+    </script>
+</body>
+</html>

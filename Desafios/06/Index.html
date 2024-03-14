@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06</title>
+    <style>
+        :root{
+            --RosaCl:#FF8E80;
+            --RosaEs:#C53A9D;
+            --RoxoCl:#4A2480;
+            --RoxoEs:#051F39;
+            --BracoX:#cdcdcd;
+            --PretoX:#232323;
+        }
+        body{
+            background-color: var(--PretoX);
+            color: var(--BracoX);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        button{
+            height: 36px;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <button onclick="Click()">Converter</button>
+    <p>Clique no botão acima para iniciar</p>
+    <script>
+        function Click(){
+            const Cel = parseFloat(window.prompt("Digite uma Temperatura em °C Celsius"));
+            let Kel = (Cel + 273.15)
+            let Fah = (Cel * 1.8 + 32)
+        
+            console.log(Fah);
+            const Res = document.querySelector("p");
+            Res.innerHTML = (`<h3>A temperatura de ${Cel}°C, corresponde a...</h3>
+            <p>${Kel.toFixed(2)}°K(Kelvin)</p>
+            <p>${Fah.toFixed(2)}°F(Fahrenheit)</p>`);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07</title>
+    <link rel="stylesheet" href="../css.css">
+</head>
+<body>
+    <h1>ConversorR$ ➡️ US$</h1>
+    <button onclick="Click()">Converter</button>
+    <p>Clique no botão acima para iniciar</p>
+    <script>
+        function Click(){
+            const cotação = parseFloat(window.prompt('Antes de mais nada. Quanto está a cotação do dólar agora?')).toFixed(2).replace(',','.');
+
+            const CarteiraReal = parseFloat(window.prompt(`Quantos R$ Você tem na Carteira?`)).toFixed(2).replace(',','.');
+
+            const CarteiraDola = (CarteiraReal/cotação).toFixed(2);
+
+            const texto = document.querySelector("p");
+            texto.innerHTML = (`<h2>A Cotação do dolar está com ${cotação.replace('.',',')}</h2>
+            <p>Com ${CarteiraReal.replace('.',',')} Reais você pode Comprar ${CarteiraDola} dólars Americanos</p>`);
+        }
+    </script>
+</body>
+</html>

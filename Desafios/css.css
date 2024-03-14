@@ -1,0 +1,27 @@
+:root{
+    --RosaCl:#FF8E80;
+    --RosaEs:#C53A9D;
+    --RoxoCl:#4A2480;
+    --RoxoEs:#051F39;
+    --BracoX:#cdcdcd;
+    --PretoX:#232323;
+}
+body{
+    background-color: var(--PretoX);
+    color: var(--BracoX);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 96vh;
+}
+button{
+    height: 36px;
+    width: 20%;
+    background-color: var(--PretoX);
+    color: var(--BracoX);
+    cursor: pointer;
+}
+span{
+    margin: 20px;
+}
