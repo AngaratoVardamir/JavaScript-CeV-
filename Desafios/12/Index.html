@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12</title>
+    <link rel="stylesheet" href="../css.css">
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button onclick="Click()">Verificar</button>
+    <span>
+        Clique no botão acima para analisar a mudança de preço.
+    </span>
+
+    <script>
+        function Click(){
+            const AnPreço = parseFloat(window.prompt(`Qual era o preço anterior do produto?`)).toFixed(2);
+
+            const PreçoAt = parseFloat(window.prompt(`Qual é o preço atual do produto?`)).toFixed(2);
+            
+
+            if(AnPreço > PreçoAt){
+                const porcentagem = (100.3 -((AnPreço / PreçoAt)*100)).toFixed(2);
+
+                const Texto = document.querySelector('span');
+
+                const Subi = (PreçoAt-AnPreço).toFixed(2);
+                
+
+                Texto.innerHTML = (`
+                <h2>Analisando os valores informados</h2>
+                
+                <p>O Produto custava R$ ${AnPreço} e agora custa R$ ${PreçoAt}.</p>
+                
+                <p>Hoje o produto está mais caro.</p>
+
+                <p>O preço subiu R$ ${Subi} em relação ao relação ao preço anterior.</p>
+                
+                <p>Uma variação de ${porcentagem}% pra cima.</p>`)
+            }else{
+                const porcentagem = (100.3 -((AnPreço / PreçoAt)*100)).toFixed(2);
+
+                const Texto = document.querySelector('span');
+
+                const Subi = (AnPreço - PreçoAt);
+                
+
+                Texto.innerHTML = (`
+                <h2>Analisando os valores informados</h2>
+                
+                <p>O Produto custava R$ ${AnPreço} e agora custa R$ ${PreçoAt}.</p>
+                
+                <p>Hoje o produto está mais barato.</p>
+
+                <p>O preço caiu R$ ${Subi} em relação ao relação ao preço anterior.</p>
+                
+                <p>Uma variação de ${porcentagem}% pra baixo.</p>`)
+            }
+        }
+    </script>
+</body>
+</html>
