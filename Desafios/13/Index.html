@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13</title>
+    <link rel="stylesheet" href="../css.css">
+
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <button onclick="Click()">
+        Entrar com as notas
+    </button>
+    <span>
+        Clique no botão acima para informar as notas do aluno
+    </span>
+    <script defer>
+        function Click(){
+            const Nome = String(window.prompt(`Qual é o nome do aluno?`));
+            const Nota1 = Number(window.prompt(`Primeira nota de ${Nome}.`));
+            const Nota2 = Number(window.prompt(`Segunda nota de ${Nome}.`));
+
+            const media = ((Nota1 + Nota2) / 2)
+
+            const Texto = document.querySelector("span");
+
+
+            if (media < 2.9) {
+                //Reprovado
+                let situação = ('Com média abaixo de 3,0, o aluno está <strong style="background-color: rgba(128, 0, 0, 0.568);">REPROVADO</strong>');
+
+
+                Texto.innerHTML = (`<h2>Analisando a sutuação de ${Nome}</h2>
+            
+                <p>Com as notas ${Nota1} e ${Nota2}, a média é ${media.toFixed(2)}</p>
+                
+                <p>${situação}</p>`);
+
+
+            }else if (media < 5.9) {
+                //Recuperação
+                let situação = ('Com média entre 3,0 e 6,0, o aluno está em <strong style="background-color: rgba(115, 128, 0, 0.568);">RECUPERAÇÃO</strong>');
+
+
+                Texto.innerHTML = (`<h2>Analisando a sutuação de ${Nome}</h2>
+            
+                <p>Com as notas ${Nota1} e ${Nota2}, a média é ${media.toFixed(2)}</p>
+                
+                <p>${situação}</p>`);
+            }
+            else {
+                //APROVADO
+                let situação = ('Com média acima de 6,0, o aluno está <strong style="background-color: rgba(0, 128, 0, 0.568);">APROVADO</strong>');
+
+
+                Texto.innerHTML = (`<h2>Analisando a sutuação de ${Nome}</h2>
+            
+                <p>Com as notas ${Nota1} e ${Nota2}, a média é ${media.toFixed(2)}</p>
+                
+                <p>${situação}</p>`);
+
+            }
+        }
+    </script>
+</body>
+</html>
